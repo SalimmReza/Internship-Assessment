@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const Layout1 = () => {
 
@@ -11,9 +12,43 @@ const Layout1 = () => {
         const email = form.email.value;
         const phone = form.phone.value;
 
-        const user = { name, email, phone, date }
-        console.log(user);
+        // const user = { name, email, phone, date }
+        // console.log(user);
+
+
+        const user = {
+            name,
+            email,
+            phone,
+            date,
+
+        }
+
+
+        fetch(`http://localhost:5000/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    toast.success('User Added')
+                    form.reset();
+
+
+                }
+                else {
+                    toast.error(data.message)
+
+                }
+            })
     }
+
+
 
 
     return (
@@ -33,7 +68,7 @@ const Layout1 = () => {
                                 <input type="text" placeholder="" name='name' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
                                 <input type="date" onChange={e => setDate(e.target.value)} placeholder="" name='date' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
                                 <input type="email" placeholder="" name='email' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
-                                <input type="number" placeholder="" name='phone' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
+                                <input type="text" placeholder="" name='phone' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
 
 
 
