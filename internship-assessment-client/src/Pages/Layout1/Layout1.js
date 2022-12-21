@@ -53,34 +53,38 @@ const Layout1 = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="hero bg-base-500">
-                <div className="card    shadow-2xl bg-base-100">
+            <div className="mt-[30px] bg-base-500">
+                <div className="card  bg-base-100">
                     <div className="card-body">
 
                         <div className='flex'>
+
                             <div className='flex  flex-col items-start gap-5 mr-10'>
+                                <h1 className='mb-[24px] text-[25px] font-[400px] flex invisible'>Form Design</h1>
                                 <h4 className='text-[22px] font-[400px] h-[40px]'>Full Name: </h4>
                                 <h4 className='text-[22px] font-[400px] h-[40px]'>Date Of Birth: </h4>
                                 <h4 className='text-[22px] font-[400px] h-[40px]'>Email: </h4>
                                 <h4 className='text-[22px] font-[400px] h-[40px]'>Phone Number: </h4>
                             </div>
+
                             <div className='flex flex-col gap-5'>
+                                <h1 className='mb-[24px] text-[25px] font-[400px] flex'>Form Design</h1>
                                 <input type="text" placeholder="" name='name' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
                                 <input type="date" onChange={e => setDate(e.target.value)} placeholder="" name='date' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
                                 <input type="email" placeholder="" name='email' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
                                 <input type="text" placeholder="" name='phone' className="input bg-[#D9D9D9] w-[415px] h-[40px]" />
 
+                                <div className='flex justify-end mt-3'>
+                                    <button className=' btn bg-blue-500 border-0 text-[17px] text-black px-14'
+                                        type='submit'
 
+                                    >Submit</button>
+                                </div>
 
                             </div>
 
                         </div>
-                        <div className='flex justify-end mt-7'>
-                            <button className=' btn bg-blue-500 border-0 text-[17px] text-black px-14'
-                                type='submit'
-                                classes='px-24'
-                            >Submit</button>
-                        </div>
+
 
 
 

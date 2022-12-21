@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './Layout2.css'
+
 
 const Layout2 = () => {
     const [details, setDetails] = useState([]);
@@ -13,19 +15,23 @@ const Layout2 = () => {
 
 
     return (
-        <div className='hero bg-base-500'>
+
+        <div className=' bg-base-500'>
+            <div>
+                <h1 className='table-h1'>Table</h1>
+            </div>
             <div className="overflow-x-auto ">
-                <table className="table">
+                <table className="table w-full">
                     <thead className='' >
-                        <tr className='flex'>
-                            <th className='w-[90px] flex justify-center'>#</th>
-                            <th className='w-[180] flex justify-center'>Name</th>
-                            <th className='w-[200px] flex justify-center'>DOB</th>
-                            <th className='w-[200px] flex justify-center'>Email</th>
+                        <tr>
+                            <th className=''>#</th>
+                            <th className=''>Name</th>
+                            <th className=''>DOB</th>
+                            <th className=''>Email</th>
 
                         </tr>
                     </thead>
-                    <tbody className='flex text-[15px] font-[400px] flex-col'>
+                    <tbody className=' text-[15px] font-[400px] flex-col'>
                         {
                             details.map((detail, i) => <tr
                                 key={detail._id}
@@ -41,6 +47,8 @@ const Layout2 = () => {
                     </tbody>
                 </table>
             </div>
+
+
         </div>
     );
 };

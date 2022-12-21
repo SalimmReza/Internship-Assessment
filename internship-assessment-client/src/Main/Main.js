@@ -5,7 +5,7 @@ import Options from '../Pages/Options/Options';
 
 const Main = () => {
     return (
-        <div className=' mt-[200px]'>
+        <div className=' mt-[10px] w-[80%] mx-auto'>
             <Options></Options>
             <Outlet></Outlet>
         </div>

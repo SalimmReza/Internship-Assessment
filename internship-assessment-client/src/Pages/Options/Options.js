@@ -1,14 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Options = () => {
-    return (
-        <div className=''>
-            <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'><Link to='/layout1'>Layout1</Link></button>
-            <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'><Link to='/layout2'>Layout2</Link></button>
-            <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'><Link to='/layout3'>Layout3</Link></button>
 
-        </div>
+    let activeStyle = {
+        backgroundColor: 'gray'
+
+
+    };
+
+    return (
+        <div className='flex gap-2'>
+
+            <NavLink to='/layout1'
+                style={({ isActive }) =>
+                    isActive ? activeStyle : undefined}
+
+            >
+                <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'>Layout1</button>
+
+            </NavLink>
+            <NavLink to='/layout2'
+                style={({ isActive }) =>
+                    isActive ? activeStyle : undefined}
+            >
+                <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'>Layout2</button>
+            </NavLink>
+            <NavLink to='/layout3'
+                style={({ isActive }) =>
+                    isActive ? activeStyle : undefined}
+            >
+                <button className='h-[34px] w-[100px] bg-[#E0E0E0] rounded-[14px] text-[13px]'>Layout3</button>
+            </NavLink>
+
+        </div >
     );
 };
 

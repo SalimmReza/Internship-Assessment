@@ -2,9 +2,7 @@ import React from 'react';
 
 const Layout3 = () => {
     return (
-        <div className='px-40'>
-
-
+        <div className='mt-[30px]'>
             <div className='grid grid-cols-8 grid-rows-6 gap-x-8 gap-y-8 '>
                 <div className='bg-[#DA1E5D] text-white text-[22px] font=[700px]  rounded-lg shadow-xl row-span-3
                 col-span-8 '>
